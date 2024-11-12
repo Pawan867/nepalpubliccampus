@@ -1,0 +1,678 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-y: scroll;
+  box-sizing: border-box; /* Ensures padding and borders are included in element’s total width and height */
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  background-color: #c17df5; /* Primary color */
+  color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+}
+
+/* Phone Section */
+.phone {
+  display: flex;
+  align-items: center;
+}
+.phone i {
+  margin-right: 10px;
+}
+.phone a:hover {
+  color: #FFD700; /* Gold color on hover */
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 20px; /* Adds space between icons */
+}
+.social-icons a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.social-icons a:hover {
+  color: #FFD700; /* Gold color on hover */
+}
+
+/* Navbar Section */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5px;
+  background-color: #FFFFFF;
+  position: sticky;
+  top: 35px; /* Adjusted based on header height */
+  width: 100%;
+  /* bottom: 50px; */
+  
+  z-index: 999;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Search Bar */
+.search-bar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+.search-button {
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.search-button i {
+  font-size: 16px;
+}
+
+/* Sign In/Up Buttons */
+.login-btn, .signup-btn {
+  color: #FFFFFF;
+  background-color: #007BFF;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.login-btn:hover, .signup-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Menu Bar */
+.menu-bar {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  border-bottom: 1px solid #CCC;
+  position: sticky;
+  top: 93px; /* Adjusted for space below the navbar */
+  z-index: 998;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 10px auto;
+  gap: 40px; /* Space between menu items */
+  justify-content: center;
+  text-transform: uppercase;
+}
+.menu li {
+  display: inline;
+}
+.menu a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.menu a:hover {
+  color: #007BFF; /* Matches primary color */
+}
+
+/* Body Section */
+.body-section {
+  padding-top: 60px; /* Adjust for header and navbar height */
+}
+
+/* Banner Section */
+.banner-section {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+.banner-image {
+  width: 100%;
+  /* height: auto; */
+  height: 200px;
+  
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 30%; /* Adjust based on number of cards per row */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px); /* Hover effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+/* View All Button */
+.view-all-section {
+  text-align: center;
+  margin-top: 20px;
+}
+.view-all-button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.view-all-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer Section */
+/* .footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+  margin-top: 20px;
+} */
+
+/* Dropdown menu container */
+.small-drop {
+  display: none; /* Hide dropdown by default */
+  position: absolute;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+/* Display dropdown on hover */
+.menu li:hover .small-drop {
+  display: block;
+}
+
+/* Dropdown holder */
+.drop-holder {
+  padding: 5px 0;
+}
+
+/* Dropdown list items */
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-unstyled li {
+  margin: 5px 0;
+}
+
+.list-unstyled a {
+  color: #333;
+  text-decoration: none;
+  padding: 5px 10px;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.list-unstyled a:hover {
+  background-color: #f1f1f1;
+  color: #007BFF;
+}
+
+/* Positioning */
+.menu li {
+  position: relative;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .phone {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .actions {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .social-icons {
+    justify-content: flex-start;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menu-bar {
+    padding: 10px;
+    border-bottom: none;
+   
+
+  }
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    padding-left: 20px;
+    /* text-transform: uppercase;  */
+  }
+  .menu li {
+    display: block;
+    width: 100%;
+  }
+  .menu a {
+    display: block;
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+    
+  }
+  .menu a:hover {
+    background-color: #f1f1f1;
+  }
+}
+
+/* Main container and row settings */
+/* Main container and row settings */
+/* Header Title Styling */
+.main-heading h2 {
+  font-size: 28px; /* Adjust as needed */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Center the content inside col-xs-12 */
+.text-center {
+  text-align: center;
+}
+
+.container-block.practice.practice2 .practice-block {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.col-xs-12, .col-sm-4 {
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.col-sm-4 {
+  width: 33.333%;
+  text-align: center;
+}
+
+/* Practice column styling */
+.practice-col {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease;
+}
+
+/* Placeholder image styling */
+.practice-col .image-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: #cccccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #666666;
+}
+
+/* Headings under images */
+.practice-col h3 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  background: #f1f1f1;
+  padding: 10px;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.4s ease; /* Smooth transition for fading out */
+}
+
+/* Overlay styling for scrolling effect */
+.practice-col .details-overlay {
+  position: absolute;
+  bottom: -100%; /* Initially positioned below the card */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e74c3c; /* Red background color */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+  transition: bottom 0.4s ease; /* Smooth transition for scroll effect */
+  z-index: 1;
+}
+
+.practice-col .details-overlay .title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.practice-col .details-overlay p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 10px 0;
+}
+
+/* Hover effect to reveal overlay and hide h3 */
+.practice-col:hover .details-overlay {
+  bottom: 0; /* Slide up the overlay on hover */
+}
+
+.practice-col:hover h3 {
+  opacity: 0; /* Fade out the h3 element when overlay is displayed */
+}
+
+/* General button styling */
+.btn-read {
+  font-size: 18px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.btn-read:hover {
+  color: #ffcc00; /* Color change on hover */
+}
+
+
+
+/* Additional details visibility control */
+.practice-col .extra-details {
+  display: none; /* Hidden by default */
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+.practice-col.show-extra .extra-details {
+  display: block; /* Show extra details when class is added */
+}
+/* Footer styling */
+/* Footer Styling */
+.footer {
+  background-color: #333; /* Dark background color */
+  color: #ddd;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid #444;
+  padding-bottom: 20px;
+}
+
+.footer-logo {
+  flex: 1;
+  text-align: left;
+  color: #fff;
+}
+
+.footer-logo .logo {
+  max-width: 120px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-info {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #ddd;
+}
+
+.footer-location, .footer-contact {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-location h4, .footer-contact h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-location p, .footer-contact p {
+  margin: 0;
+  color: #bbb;
+}
+
+.footer-contact a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: #fff;
+}
+
+/* Social Media Links */
+.footer-social {
+  flex: 1;
+  text-align: right;
+}
+
+.footer-social a {
+  color: #ddd;
+  font-size: 18px;
+  margin-left: 15px;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #fff;
+}
+
+/* Bottom Footer Styling */
+.footer-bottom {
+  background-color: #c17df5; /* Completely black background */
+  color: #fff; /* White text color */
+  font-size: 14px;
+  padding: 10px 0; /* Increased padding for more spacing */
+  /* margin-top: 10px; */
+  text-align: center;
+}
+
+.footer-links a {
+  color: #fff; /* White text color for links */
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0 5px; /* Add space between links */
+}
+
+.footer-links a:hover {
+  color: #ddd; /* Light gray color on hover */
+}
+
+/* Team Section Styling */
+.team-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.team-header h2 {
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.team-member {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-member:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+}
+
+.team-photo {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  height: 200px;
+ 
+}
+/* height: auto; */
+.team-member h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+.position {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.bio {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: #555;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007BFF; /* Change color on hover */
+}
+/* Initial state for hidden elements */
+.team-member {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Transition for smooth entry */
+}
+
+/* Active state for elements in view */
+.team-member.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
