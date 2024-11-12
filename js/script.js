@@ -110,7 +110,31 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initial check and on scroll event
     checkTeamMembers(); // Initial check in case elements are already in view
     window.addEventListener("scroll", checkTeamMembers);
+    const newsCards = document.querySelectorAll(".news-card");
 
+    // Function to check if an element is in the viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    // Function to add 'in-view' class to elements in the viewport
+    function checkCardsInView() {
+        newsCards.forEach(card => {
+            if (isInViewport(card)) {
+                card.classList.add("in-view");
+            }
+        });
+    }
+
+    // Check cards on initial load and scroll event
+    checkCardsInView();
+    window.addEventListener("scroll", checkCardsInView);
 });
 // JavaScript for smooth scrolling on footer links
 document.querySelectorAll('.footer-links a').forEach(link => {
