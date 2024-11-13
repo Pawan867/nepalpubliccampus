@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header section with contact and social media links -->
+    <!-- Header section with contact, social media links, and mobile menu toggle button -->
     <header class="header">
         <div class="phone" aria-label="Contact Information">
             <span style="margin-right: 5px;">Call Us </span>
@@ -22,6 +22,9 @@
             <!-- Dynamic phone number added via script -->
             <a href="tel:+123-456-7890" id="phone-number" style="color: inherit; text-decoration: none;"></a>
         </div>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
         <div class="social-icons" aria-label="Social Media Links">
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <i class="fab fa-facebook-f"></i>
@@ -34,7 +37,27 @@
             </a>
         </div>
     </header>
+    <!-- Mobile Toggle Button (visible only on mobile) -->
+    <button class="menu-toggle" aria-label="Open Menu">
+        <i class="fas fa-bars"></i>
+    </button>
 
+
+    <!-- Mobile Menu Overlay (visible only on mobile) -->
+    <div class="mobile-menu-overlay">
+        <button class="menu-close" aria-label="Close Menu">&times;</button>
+        <ul class="mobile-menu">
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Colleges</a></li>
+            <li><a href="#">Degrees</a></li>
+            <li><a href="#">Exams</a></li>
+            <li><a href="#">Schools</a></li>
+            <li><a href="#"class="sign-up">Sign In</a></li>
+            <li><a href="#" class="sign-up">Sign Up</a></li>
+        </ul>
+    </div>
+</header>
+    
     <!-- Navbar section for navigation and search functionality -->
     <nav class="navbar">
         <img src="images/logo-dark.webp" alt="Public Campus Logo" class="navbar-logo">
@@ -51,7 +74,7 @@
             <a href="#" class="signup-btn">Sign Up</a>
         </div>
     </nav>
-
+    
     <!-- Main navigation menu -->
     <nav class="menu-bar" aria-label="Main Navigation">
         <ul class="menu">
@@ -111,9 +134,14 @@
         </ul>
     </nav>
 
+    
+    
+
+
+
     <!-- Banner section for promotional content -->
     <section class="banner-section">
-        <img src="images/banner3.jpg" alt="Promotional Banner Image" class="banner-image">
+        <img src="images/banner5.png" alt="Promotional Banner Image" class="banner-image">
     </section>
 
  
@@ -122,8 +150,10 @@
 <!-- Body Section -->
 <section class="container container-block practice practice2">
     <!-- Section Header -->
-    <header class="row main-heading">
-        <div class="col-xs-12 text-center"> <!-- Added text-center class for centering -->
+    <section class="team-section">
+    <header class="team-header">
+    <!-- <header class="row main-heading">
+        <div class="col-xs-12 text-center"> Added text-center class for centering -->
             <h2>Courses</h2> <!-- Changed "Practice Areas" to "Courses" -->
         </div>
     </header>
