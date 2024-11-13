@@ -31,21 +31,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuClose = document.querySelector('.menu-close');
     const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
 
-    if (menuToggle && menuClose && mobileMenuOverlay) {
+    if (menuToggle && mobileMenuOverlay) {
         // Open menu overlay
         menuToggle.addEventListener("click", () => {
-            mobileMenuOverlay.classList.add('active');
+            mobileMenuOverlay.classList.toggle('active');
         });
 
         // Close menu overlay
-        menuClose.addEventListener("click", () => {
-            mobileMenuOverlay.classList.remove('active');
-        });
+        if (menuClose) {
+            menuClose.addEventListener("click", () => {
+                mobileMenuOverlay.classList.remove('active');
+            });
+        }
     }
 
     // Smooth scroll functionality for internal anchor links
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach(link => {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
@@ -59,8 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Card hover effect using JavaScript for alternative visual feedback
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
+    document.querySelectorAll('.card').forEach(card => {
         card.addEventListener('mouseover', () => {
             card.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.15)'; // Enhanced shadow on hover
         });
@@ -79,8 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Toggle display of extra details on clicking the "+" button
-    const btnReadMore = document.querySelectorAll(".btn-read");
-    btnReadMore.forEach(button => {
+    document.querySelectorAll(".btn-read").forEach(button => {
         button.addEventListener("click", function (event) {
             event.preventDefault();
             const practiceCol = this.closest(".practice-col");
@@ -114,10 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Applying in-view animation to team members and news cards
-    const teamMembers = document.querySelectorAll(".team-member");
-    const newsCards = document.querySelectorAll(".news-card");
-    addInViewAnimation(teamMembers);
-    addInViewAnimation(newsCards);
+    addInViewAnimation(document.querySelectorAll(".team-member"));
+    addInViewAnimation(document.querySelectorAll(".news-card"));
 
     // Smooth scrolling for footer links
     document.querySelectorAll('.footer-links a').forEach(link => {
@@ -142,4 +139,40 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    // Mobile menu toggle for showing and hiding main menu
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function () {
+            document.querySelector('.menu').classList.toggle('open');
+        });
+    }
 });
+function toggleSearch() {
+    const searchBar = document.getElementById('search-bar');
+    searchBar.classList.toggle('active');
+}
+
+// Hide navbar on scroll for mobile
+let lastScrollTop = 0;
+window.addEventListener('scroll', function(){
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (window.innerWidth <= 768) { // Apply only on mobile view
+        if (scrollTop > lastScrollTop){
+            document.querySelector('.navbar').style.top = "-60px"; // Hide on scroll down
+        } else {
+            document.querySelector('.navbar').style.top = "0"; // Show on scroll up
+        }
+    }
+    lastScrollTop = scrollTop;
+    function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('open');
+    }
+    function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('open');
+    }
+    
+    
+});
+

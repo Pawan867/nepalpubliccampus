@@ -54,8 +54,8 @@ body {
   align-items: center;
   padding: 15px 5px;
   background-color: #FFFFFF;
-  position: sticky;
-  top: 35px; /* Adjusted based on header height */
+  position: fixed;
+  top: 25px; /* Adjusted based on header height */
   width: 100%;
   /* bottom: 50px; */
   
@@ -101,7 +101,7 @@ body {
 }
 
 /* Sign In/Up Buttons */
-.login-btn, .signup-btn {
+.signin-btn, .signup-btn {
   color: #FFFFFF;
   background-color: #007BFF;
   padding: 8px 15px;
@@ -112,20 +112,74 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.login-btn:hover, .signup-btn:hover {
+.signin-btn:hover, .signup-btn:hover {
   background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* Menu Bar */
+/* Menu Bar */
 .menu-bar {
   background-color: #ffffff;
-  padding: 10px 20px;
-  border-bottom: 1px solid #CCC;
+  /* padding: 10px 20px; */
+  border-bottom: 2px solid #CCC;
   position: sticky;
-  top: 93px; /* Adjusted for space below the navbar */
+  top: 94px; /* Adjusted for space below the navbar */
   z-index: 998;
 }
 
+.menu-bar .menu-toggle {
+  display: none; /* Hidden on desktop by default */
+  background: none;
+  border: none;
+  font-size: 1.2em; /* Increase size for visibility */
+  color: #333; /* Set color to make sure it’s visible */
+  cursor: pointer;
+  z-index: 20; /* Ensure it's on top of other elements */
+}
+@media (max-width: 768px) {
+  .menu-bar {
+      border: none; /* Remove border from the menu bar */
+  }
+
+  .menu-bar .menu {
+      display: none; /* Hidden by default */
+      flex-direction: column;
+      background-color: #f8f8f8;
+      padding: 10px;
+      z-index: 1000;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      overflow-y: auto;
+      box-shadow: none; /* Remove any shadow */
+      border: none; /* Remove border from the dropdown menu */
+  }
+
+  .menu.open {
+      display: flex;
+  }
+
+
+
+
+.menu-close {
+    align-self: flex-end;
+    margin-bottom: 10px;
+    padding-right: 15px;
+}
+
+.menu-close button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+}
+}
 .menu {
   display: flex;
   list-style: none;
@@ -162,7 +216,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 25px;
+  margin-top: 0px;
 }
 .banner-image {
   width: 100%;
@@ -272,50 +326,119 @@ body {
   color: #007BFF;
 }
 
-/* Positioning */
-/* .menu li {
-  position: relative;
-} */
 
 
-/* Responsive Design */
-/* Responsive Design */
-@media (max-width: 768px) {
-  /* Header and Navbar Adjustments */
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .phone {
-    width: 100%;
-    justify-content: space-between;
-  }
-  
-  .actions {
-    width: 100%;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .social-icons {
-    justify-content: flex-start;
-  }
-  
-  /* Hide the default navbar, search bar, and actions for mobile */
-  .navbar, .search-bar, .actions {
-    display: none;
-  }
 
+/* Contact Info Styling */
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.contact-info span,
+.contact-info a {
+  font-size: 14px;
+}
+
+/* Navbar with Menu Toggle Button */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+/* Social Icons Styling */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+
+/* Menu Bar Styling */
+
+
+
+
+
+  @media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        transition: top 0.3s;
+    }
+
+    .logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    .search-icon {
+        cursor: pointer;
+    }
+
+    /* Search bar overlay */
+    .search-bar {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 50px; /* Position below navbar */
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background-color: white;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999; /* Ensure it appears above other content */
+    }
+
+    .search-bar.active {
+        display: flex; /* Show search bar when active */
+    }
+
+    .search-bar input {
+        width: calc(100% - 40px); /* Space for the search button */
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .search-bar button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        margin-left: 5px;
+    }
+
+    .actions {
+        display: flex;
+        margin-right: 35px;
+    }
+
+    .actions button {
+        margin-left: 5px;
+    }
+
+    .sign-in, .sign-up {
+        display: inline-block;
+        background-color: blue;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+}
+
+  
   /* Menu Toggle Button */
-  .menu-toggle {
-    display: block; /* Show menu toggle button on mobile */
-    background: none;
-    border: none;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-  }
+  
 
   /* Mobile Menu Overlay */
   .mobile-menu-overlay {
@@ -401,9 +524,7 @@ body {
 
 /* Hide mobile menu overlay and toggle button on desktop */
 @media (min-width: 769px) {
-  .menu-toggle {
-    display: none; /* Hide the toggle button on desktop */
-  }
+  
   
   .mobile-menu-overlay {
     display: none; /* Hide the mobile overlay on desktop */
@@ -411,8 +532,7 @@ body {
 }
 
 
-/* Main container and row settings */
-/* Main container and row settings */
+
 /* Header Title Styling */
 .main-heading h2 {
   font-size: 28px; /* Adjust as needed */
