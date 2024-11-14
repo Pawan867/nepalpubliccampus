@@ -549,11 +549,22 @@ body {
 }
 
 .container-block.practice.practice2 .practice-block {
+  
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
   gap: 20px;
+  /* width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; */
 }
+
+/* margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; */
 
 .col-xs-12, .col-sm-4 {
   position: relative;
@@ -564,6 +575,51 @@ body {
 .col-sm-4 {
   width: 33.333%;
   text-align: center;
+}
+/* .col-md-4 .col-sm-12{
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .col-md-4 {
+    float: left; }
+  .col-md-4 {
+      width: 33.3333333333%; }
+    }
+@media (min-width: 768px) {
+  .col-sm-12
+  {
+  float: left; }
+  .col-sm-12 {
+      width: 100%; }
+  } */
+  /* Basic reset for the grid */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-sm-12, .col-md-4 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+/* Full-width column for small screens (sm) */
+.col-sm-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* One-third width column for medium screens and above (md) */
+@media (min-width: 768px) {
+  .col-md-4 {
+      flex: 0 0 33.3333%;
+      max-width: 33.3333%;
+  }
 }
 
 /* Practice column styling */
@@ -621,6 +677,7 @@ body {
   z-index: 1;
 }
 
+
 .practice-col .details-overlay .title {
   font-weight: 700;
   font-size: 18px;
@@ -672,7 +729,14 @@ body {
 .practice-col.show-extra .extra-details {
   display: block; /* Show extra details when class is added */
 }
+/* @media (min-width: 768px) {
+  .practice-block {
+      display: flex;
+      justify-content: space-between;
+  }
+} */
 /* Footer styling */
+
 /* Footer Styling */
 .footer {
   background-color: #333; /* Dark background color */
