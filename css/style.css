@@ -121,10 +121,10 @@ body {
 .menu-bar {
   background-color: #ffffff;
   /* padding: 10px 20px; */
-  border-bottom: 2px solid #CCC;
+  border-bottom: 1px solid rgb(106, 161, 238);
   position: sticky;
   top: 94px; /* Adjusted for space below the navbar */
-  z-index: 998;
+  z-index: 1000;
 }
 
 .menu-bar .menu-toggle {
@@ -138,11 +138,11 @@ body {
 }
 @media (max-width: 768px) {
   .menu-bar {
-      border: none; /* Remove border from the menu bar */
+      border: none; 
   }
 
   .menu-bar .menu {
-      display: none; /* Hidden by default */
+      display: none; 
       flex-direction: column;
       background-color: #f8f8f8;
       padding: 10px;
@@ -154,38 +154,18 @@ body {
       width: 100%;
       height: 100vh;
       overflow-y: auto;
-      box-shadow: none; /* Remove any shadow */
-      border: none; /* Remove border from the dropdown menu */
+      box-shadow: none; 
+      border: none;
   }
 
-  .menu.open {
-      display: flex;
-  }
-
-
-
-
-.menu-close {
-    align-self: flex-end;
-    margin-bottom: 10px;
-    padding-right: 15px;
-}
-
-.menu-close button {
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    color: #333;
-    cursor: pointer;
-    font-weight: bold;
-}
+  
 }
 .menu {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 10px auto;
-  gap: 40px; /* Space between menu items */
+  gap: 30px; /* Space between menu items */
   justify-content: center;
   text-transform: uppercase;
 }
@@ -273,13 +253,6 @@ body {
   background-color: #0056b3; /* Darker blue on hover */
 }
 
-/* Footer Section */
-/* .footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #f1f1f1;
-  margin-top: 20px;
-} */
 
 /* Dropdown menu container */
 .small-drop {
@@ -299,7 +272,7 @@ body {
 
 /* Dropdown holder */
 .drop-holder {
-  padding: 5px 0;
+  padding: 7px 20px;
 }
 
 /* Dropdown list items */
@@ -338,7 +311,7 @@ body {
 
 .contact-info span,
 .contact-info a {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 /* Navbar with Menu Toggle Button */
@@ -350,16 +323,11 @@ body {
 /* Social Icons Styling */
 .social-icons {
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 
 
 /* Menu Bar Styling */
-
-
-
-
-
   @media (max-width: 768px) {
     .navbar {
         display: flex;
@@ -379,23 +347,11 @@ body {
         display: flex;
         align-items: center;
         margin-left: 10px;
+        
     }
 
     .search-icon {
         cursor: pointer;
-    }
-
-    /* Search bar overlay */
-    .search-bar {
-        display: none; /* Hidden by default */
-        position: fixed;
-        top: 50px; /* Position below navbar */
-        left: 0;
-        width: 100%;
-        padding: 10px;
-        background-color: white;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 999; /* Ensure it appears above other content */
     }
 
     .search-bar.active {
@@ -415,6 +371,7 @@ body {
         cursor: pointer;
         padding: 8px;
         margin-left: 5px;
+        background-color: #007BFF;
     }
 
     .actions {
@@ -435,14 +392,11 @@ body {
         cursor: pointer;
     }
 }
-
-  
-  /* Menu Toggle Button */
   
 
   /* Mobile Menu Overlay */
   .mobile-menu-overlay {
-    display: none; /* Initially hidden */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -461,44 +415,7 @@ body {
     display: flex;
   }
 
-  /* Close button for the overlay */
-  .menu-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 30px;
-    color: #FFFFFF;
-    cursor: pointer;
-    z-index: 1001;
-  }
   
-  .menu-close:hover {
-    color: #FFD700; /* Optional: change color on hover */
-  }
-
-  /* Mobile Menu Styling */
-  .mobile-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  }
-
-  .mobile-menu li {
-    margin: 15px 0;
-  }
-
-  .mobile-menu a {
-    color: #FFFFFF;
-    font-size: 20px;
-    text-decoration: none;
-  }
-
-  .mobile-menu a:hover {
-    text-decoration: underline;
-  }
 
   /* Sign Up Button in Mobile Overlay */
   .sign-up {
@@ -518,20 +435,8 @@ body {
 
   /* Hide dropdown menus in the overlay */
   .small-drop {
-    display: none !important;
+    display: static !important;
   }
-}
-
-/* Hide mobile menu overlay and toggle button on desktop */
-@media (min-width: 769px) {
-  
-  
-  .mobile-menu-overlay {
-    display: none; /* Hide the mobile overlay on desktop */
-  }
-}
-
-
 
 /* Header Title Styling */
 .main-heading h2 {
@@ -553,49 +458,17 @@ body {
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  /* width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto; */
+  gap: 10px;
 }
-
-/* margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px; */
-
 .col-xs-12, .col-sm-4 {
   position: relative;
   padding-left: 15px;
   padding-right: 15px;
 }
-
 .col-sm-4 {
   width: 33.333%;
   text-align: center;
 }
-/* .col-md-4 .col-sm-12{
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 992px) {
-  .col-md-4 {
-    float: left; }
-  .col-md-4 {
-      width: 33.3333333333%; }
-    }
-@media (min-width: 768px) {
-  .col-sm-12
-  {
-  float: left; }
-  .col-sm-12 {
-      width: 100%; }
-  } */
-  /* Basic reset for the grid */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -716,8 +589,6 @@ body {
   color: #ffcc00; /* Color change on hover */
 }
 
-
-
 /* Additional details visibility control */
 .practice-col .extra-details {
   display: none; /* Hidden by default */
@@ -729,14 +600,6 @@ body {
 .practice-col.show-extra .extra-details {
   display: block; /* Show extra details when class is added */
 }
-/* @media (min-width: 768px) {
-  .practice-block {
-      display: flex;
-      justify-content: space-between;
-  }
-} */
-/* Footer styling */
-
 /* Footer Styling */
 .footer {
   background-color: #333; /* Dark background color */
