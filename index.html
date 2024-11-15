@@ -38,21 +38,7 @@
 
     <!-- Mobile Menu Overlay (visible only on mobile) -->
 <div class="navbar">
-    <!-- Logo on the left -->
-    <!-- <div class="logo">
-        <img src="path-to-logo.png" alt="Logo" />
-    </div>
-     -->
-    <!-- Search Icon (click to open search bar)
-    <div class="search-icon">
-        <i class="fa fa-search" onclick="toggleSearch()"></i>
-    </div> -->
     
-    <!-- Hidden Search Bar (shown only when search icon is clicked) -->
-    <!-- <div class="search-bar" id="search-bar">
-        <input type="text" placeholder="Search colleges, courses, institutes..."/>
-        <button type="submit"><i class="fa fa-search"></i></button>
-    </div> -->
 </div>
 
     <!-- Navbar section for navigation and search functionality -->
@@ -73,10 +59,12 @@
         </div>
         
         
+        
     </nav>
 
     <!-- Main navigation menu -->
 <nav class="menu-bar" aria-label="Main Navigation">
+    <!-- <div class="hidden mt-2 mb-1 space-x-6 md:flex menu"> -->
         <ul class="menu">
             <!-- Courses Dropdown -->
             <li>
@@ -132,7 +120,42 @@
             <li><a href="#">Skills</a></li>
             <li><a href="#">More</a></li>
         </ul>
+    <!-- </div> -->
 </nav>
+<!-- Mobile Header for Small Screens -->
+<div class="mobile-header">
+    <div class="menu-icon">
+        <i class="fa fa-bars"></i> <!-- Menu Icon for Mobile View -->
+    </div>
+    <img src="images/logo-dark.webp" alt="Nepal Logo" class="mobile-logo">
+    <div class="mobile-search-icon">
+        <i class="fa fa-search"></i> <!-- Mobile Search Icon for Mobile View -->
+    </div>
+</div>
+
+<!-- Mobile Menu Overlay (Initially Hidden) -->
+<div class="mobile-menu-overlay">
+    <div class="close-icon">
+        <i class="fa fa-times"></i> <!-- Close Icon for Mobile Menu -->
+    </div>
+    <ul class="mobile-menu-items">
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Colleges</a></li>
+        <li><a href="#">Degrees</a></li>
+        <li><a href="#">Exams</a></li>
+        <li><a href="#">Schools</a></li>
+        <li><a href="#">Admissions</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">More</a></li>
+    </ul>
+    <!-- Sign In and Sign Up buttons at the bottom -->
+    <div class="auth-buttons">
+        <a href="#" class="signin-btn">Sign In</a>
+        <a href="#" class="signup-btn">Sign Up</a>
+    </div>
+</div>
 
     <!-- Banner section for promotional content -->
     <section class="banner-section">

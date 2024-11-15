@@ -27,23 +27,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Mobile menu toggle functionality for responsive design
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menuClose = document.querySelector('.menu-close');
+    const menuToggle = document.querySelector('.menu-icon'); // Menu open icon
+    const closeIcon = document.querySelector('.close-icon'); // Close icon within mobile menu
     const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
 
-    if (menuToggle && mobileMenuOverlay) {
-        // Open menu overlay
-        menuToggle.addEventListener("click", () => {
-            mobileMenuOverlay.classList.toggle('active');
-        });
+    // Open the mobile menu overlay
+    menuToggle.addEventListener("click", () => {
+        mobileMenuOverlay.classList.add('active');
+    });
 
-        // Close menu overlay
-        if (menuClose) {
-            menuClose.addEventListener("click", () => {
-                mobileMenuOverlay.classList.remove('active');
-            });
-        }
-    }
+    // Close the mobile menu overlay
+    closeIcon.addEventListener("click", () => {
+        mobileMenuOverlay.classList.remove('active');
+    });
 
     // Smooth scroll functionality for internal anchor links
     document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -147,10 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-function toggleSearch() {
-    const searchBar = document.getElementById('search-bar');
-    searchBar.classList.toggle('active');
-}
 
 // Hide navbar on scroll for mobile
 let lastScrollTop = 0;
@@ -164,15 +156,4 @@ window.addEventListener('scroll', function(){
         }
     }
     lastScrollTop = scrollTop;
-    function toggleMenu() {
-        const menu = document.getElementById('mobileMenu');
-        menu.classList.toggle('open');
-    }
-    function toggleMenu() {
-        const menu = document.getElementById('mobileMenu');
-        menu.classList.toggle('open');
-    }
-    
-    
 });
-

@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10px;
+  padding: 5px 1px;
   background-color: #c17df5; /* Primary color */
   color: #FFFFFF;
   position: fixed;
@@ -52,7 +52,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 5px;
+  padding: 10px 1px;
   background-color: #FFFFFF;
   position: fixed;
   top: 25px; /* Adjusted based on header height */
@@ -123,7 +123,7 @@ body {
   /* padding: 10px 20px; */
   border-bottom: 1px solid rgb(106, 161, 238);
   position: sticky;
-  top: 94px; /* Adjusted for space below the navbar */
+  top: 75px; /* Adjusted for space below the navbar */
   z-index: 1000;
 }
 
@@ -401,7 +401,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #0056b3;
     z-index: 1000;
     align-items: center;
@@ -411,9 +411,19 @@ body {
   }
 
   /* Show overlay when active */
-  .mobile-menu-overlay.active {
+  /* .mobile-menu-overlay.active {
     display: flex;
-  }
+  } */
+  /* Close icon styling */
+.close-icon {
+  position: absolute;
+  top: 20px;
+  right: 150px;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001; /* Ensure it's above other elements */
+}
 
   
 
@@ -904,4 +914,106 @@ body {
   transform: translateY(0);
 }
 
+/* Desktop view styling (default) */
+.desktop-header, .navbar, .menu-bar, .contact-info, .social-icons {
+    display: flex; /* Ensure these are visible on desktop */
+}
+/* Hide the mobile header by default on desktop */
+.mobile-header {
+  display: none;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    /* Hide desktop navbar, contact info, and social icons on small screens */
+    .navbar, .menu-bar, .contact-info, .social-icons {
+        display: none;
+    }
+
+    /* Mobile header style (menu icon, logo, search icon) */
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 20px;
+        background-color: #fff; /* White background */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    }
+
+    .menu-icon, .mobile-search-icon {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #333; /* Icon color */
+    }
+
+    /* Mobile logo styling */
+    .mobile-logo {
+        height: 30px;
+        width: auto;
+    }
+
+    /* Mobile menu overlay */
+    .mobile-menu-overlay {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Dark overlay background */
+        z-index: 1000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Show the menu overlay when active */
+    .mobile-menu-overlay.active {
+        display: flex;
+    }
+
+    /* Mobile menu item styling */
+    .mobile-menu-items {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .mobile-menu-items li {
+        margin: 15px 0;
+    }
+
+    .mobile-menu-items li a {
+        color: #fff; /* White text */
+        font-size: 1.5rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-menu-items li a:hover {
+        color: #ff9900; /* Hover color */
+    }
+}
+/* Sign In and Sign Up buttons */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: auto; /* Push buttons towards the bottom */
+  padding-bottom: 20px;
+}
+
+.signin-btn, .signup-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #007bff; /* Customize button color */
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.signin-btn:hover, .signup-btn:hover {
+  background-color: #0056b3; /* Darker on hover */
+}
 
